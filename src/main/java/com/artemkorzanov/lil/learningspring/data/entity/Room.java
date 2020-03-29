@@ -1,6 +1,5 @@
 package com.artemkorzanov.lil.learningspring.data.entity;
 
-import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 
