@@ -1,20 +1,20 @@
 package com.artemkorzanov.lil.learningspring.data.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
-@Table(name="RESERVATION")
+@Table(name = "RESERVATION")
 public class Reservation {
     @Id
-    @Column(name="RESERVATION_ID")
+    @Column(name = "RESERVATION_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long reservationId;
-    @Column(name="ROOM_ID")
+    @Column(name = "ROOM_ID")
     private long roomId;
     @Column(name = "GUEST_ID")
     private long guestId;
-    @Column(name="RES_DATE")
+    @Column(name = "RES_DATE")
     private Date resDate;
 
     public long getReservationId() {
