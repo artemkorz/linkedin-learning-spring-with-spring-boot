@@ -35,7 +35,7 @@ public class ReservationService {
             roomReservation.setRoomNumber(room.getRoomNumber());
             roomReservationMap.put(room.getRoomId(), roomReservation);
         });
-        Iterable<Reservation> reservations = this.reservationRepository.findReservationByReservationDate(new java.sql.Date(date.getTime()));
+        Iterable<Reservation> reservations = this.reservationRepository.findReservationByResDate(new java.sql.Date(date.getTime()));
         reservations.forEach(reservation -> {
             RoomReservation roomReservation = roomReservationMap.get(reservation.getRoomId());
             roomReservation.setDate(date);
