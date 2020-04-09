@@ -50,4 +50,19 @@ public class ReservationService {
         }
         return roomReservations;
     }
+    public List<Guest> getHotelGuests() {
+        Iterable<Guest> guests = guestRepository.findAll();
+        List<Guest> guestList = new ArrayList<>();
+        guests.forEach(guest -> guestList.add(guest));
+        guestList.sort(new Comparator<Guest>() {
+            @Override
+            public int compare(Guest g1, Guest g2) {
+                if(g1.getLastName() == g2.getLastName()) {
+                    return g1.getFirstName().compareTo(g2.getFirstName());
+                }
+                return g1.getLastName().compareTo(g2.getLastName());
+            }
+        });
+        return guestList;
+    }
 }
